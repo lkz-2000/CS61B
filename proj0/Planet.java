@@ -26,7 +26,7 @@ public class Planet {
         squar=(this.yyPos-a.yyPos)*(this.yyPos-a.yyPos)+(this.xxPos-a.xxPos)*(this.xxPos-a.xxPos);
         return Math.sqrt(squar);
     }
-    static final double G=6.67e-11;
+    private static final double G=6.67e-11;
     public double calcForceExertedBy(Planet a){
         return this.mass*a.mass*G/(this.calcDistance(a)*this.calcDistance(a));
     }
