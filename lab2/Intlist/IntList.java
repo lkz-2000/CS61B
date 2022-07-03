@@ -108,6 +108,7 @@ public class IntList {
             AA = AA.rest;
             C = C.rest;
         }
+
         C.rest=B;
         return D;
     }
