@@ -21,7 +21,7 @@ public class ArrayDeque<T> {
     public void printDeque(){
         int f=(nextfirst+1)%items.length;
         int l=(nextlast+items.length-1)%items.length;
-        if(nextfirst>nextlast){
+        if(f>l){
             for(int i=f;i<items.length;i++){
                 System.out.print(items[i]+" ");
             }
@@ -46,19 +46,19 @@ public class ArrayDeque<T> {
         T[] a=(T[]) new Object[arraysize];
         int f=(nextfirst+1)%items.length;
         int l=(nextlast+items.length-1)%items.length;
-        if(nextfirst>nextlast){
+        if(f>l){
             System.arraycopy(items,f,a,0,items.length-f);
             System.arraycopy(items,0,a,items.length-f,l+1);
         }
         else{
-            System.arraycopy(items,f,a,0,l-f+1);
+            System.arraycopy(items,f,a,0,size);
         }
         items=a;
         nextfirst=items.length-1;
         nextlast=size;
     }
     public void addLast(T item){
-        if(nextlast==nextfirst){
+        if(size== items.length){
             resize(2*items.length);
         }
         items[nextlast]=item;
@@ -78,7 +78,7 @@ public class ArrayDeque<T> {
         return x;
     }
     public void addFirst(T item){
-        if(nextlast==nextfirst){
+        if(size== items.length){
             resize(2*items.length);
         }
         items[nextfirst]=item;
