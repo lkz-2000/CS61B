@@ -42,7 +42,7 @@ public class ArrayDeque<T> {
         int f=(nextfirst+1)%items.length;
         return items[(index+f)%items.length];
     }
-    public void resize(int arraysize){
+    private void resize(int arraysize){
         T[] a=(T[]) new Object[arraysize];
         int f=(nextfirst+1)%items.length;
         int l=(nextlast+items.length-1)%items.length;

@@ -54,7 +54,7 @@ public class LinkedListDeque<T> {
         return first;
     }
     public T removeLast(){
-        if(sentinel.prev==null){
+        if(sentinel.prev==sentinel){
             return null;
         }
         T last=sentinel.prev.item;
